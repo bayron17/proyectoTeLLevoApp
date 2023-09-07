@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
+import { AnimationController, IonCard } from '@ionic/angular';
+import type { Animation } from '@ionic/angular';
 import { Menu } from 'src/app/models/menu';
 
 @Component({
@@ -8,10 +10,14 @@ import { Menu } from 'src/app/models/menu';
   styleUrls: ['./menu.page.scss'],
 })
 export class MenuPage implements OnInit {
+  
+  @ViewChild(IonCard, { read: ElementRef }) card!: ElementRef<HTMLIonCardElement>;
+
+  private animation!: Animation;
 
   menuArray:Menu[]=[]
 
-  constructor(private router:Router) { }
+  constructor(private router:Router,private animationCtrl: AnimationController) { }
 
   cargarMenu(){
     this.menuArray.push(
@@ -30,8 +36,26 @@ export class MenuPage implements OnInit {
     );
   }
 
+  ngAfterViewInit() {
+    this.animation = this.animationCtrl
+      .create()
+      .addElement(document.querySelectorAll("ion-card"))
+      .duration(500)
+      .iterations(1)
+      .fromTo('transform', 'translateX(500px)', 'translateX(0px)')
+      .fromTo('opacity', '0', '1');
+  }
+
+  play(){
+    this.animation.play();
+  }
+
   ngOnInit() {
     this.cargarMenu();
+  }
+
+  ionViewWillEnter(){
+    this.play();
   }
 
   logOut(){
