@@ -1,0 +1,62 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-button (click)="logOut()" slot="end">
+      <ion-icon name="log-out-outline"></ion-icon>
+    </ion-button>
+  
+    <ion-list class="contenedor-titulo">
+      <ion-item class="item-titulo">
+        <ion-label class="titulo-login"><img src="../../../assets/img/Logotipo.png" alt="" width="150px"></ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-toolbar>
+
+  <ion-title class="titulo-bienvenido">
+    <h5>registrarte aquí</h5>
+  </ion-title>
+
+  
+
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-thumbnail slot="start">
+            <ion-icon class="iconos-registro" name="accessibility-outline"></ion-icon>          
+          </ion-thumbnail>
+              <ion-input label="Nombre completo"  labelPlacement="floating" type="text"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-thumbnail slot="start">
+            <ion-icon class="iconos-registro" name="mail-outline"></ion-icon>        
+          </ion-thumbnail>
+              <ion-input label="email@email.com"  labelPlacement="floating" type="text"></ion-input>
+        </ion-item>
+  
+        <ion-item>
+          <ion-thumbnail slot="start">
+            <ion-icon class="iconos-registro" name="person-circle-outline"></ion-icon>        
+          </ion-thumbnail>
+          <ion-input label="user"  labelPlacement="floating" type="text"></ion-input>
+        </ion-item>
+  
+        <ion-item>
+          <ion-thumbnail slot="start">
+            <ion-icon class="iconos-registro" name="lock-closed-outline"></ion-icon>          </ion-thumbnail>
+          <ion-input  class="input-password" label="Password input"  labelPlacement="floating" type="password" value="password"></ion-input>
+        </ion-item>
+  
+        <div class="container-boton">
+          <ion-button fill="clear" class="boton-registrar" >Registrar</ion-button>
+      </div>
+
+      <br>
+
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
