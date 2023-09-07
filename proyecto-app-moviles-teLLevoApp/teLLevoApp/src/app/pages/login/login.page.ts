@@ -19,7 +19,7 @@ export class LoginPage implements OnInit {
  
 
   ingresar(){
-    if(this.user=="usuario1" && this.password=="holamundo"){
+    if(this.user=="pgy4121-003d" && this.password=="pgy4121-003d"){
       this.router.navigateByUrl("menu");
     }else{
       alert("usuario u contraseña incorrecta")
