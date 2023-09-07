@@ -1,0 +1,55 @@
+<ion-header [translucent]="true">
+
+  <ion-toolbar>
+    <ion-list class="contenedor-titulo">
+      <ion-item class="item-titulo">
+        <ion-label class="titulo-login"><img src="../../../assets/img/Logotipo.png" alt="" width="150px"></ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-toolbar>
+  
+  <ion-title class="titulo-bienvenido">
+    <h5>Bienvenidos</h5>
+  </ion-title>
+
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-card>
+
+    <ion-card-content>
+      <ion-item class="item-input">
+        <ion-input [(ngModel)]="user" class="input-user" labelPlacement="floating" value="name123">
+          <div slot="label">Usuario <ion-text color="danger">(Required)</ion-text></div>
+        </ion-input>
+      </ion-item>
+
+      <ion-item class="item-input">
+        <ion-input [(ngModel)]="password" class="input-password" label="Contraseña"  labelPlacement="floating" type="password" value="password"></ion-input>
+      </ion-item>
+      
+      <ion-grid>
+        <ion-row>
+          <ion-col size="4">
+            <div  class="btnRegistrarse"><a class="Linkregistrarse" (click)="registrarse()">Registrate</a></div>
+          </ion-col>
+          <ion-col size="8">
+            <div  class="btnRecuperar"><a class="LinkRecuperar" (click)="recuperarPasword()">¿has olvidado la contraseña?</a></div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      
+    </ion-card-content>
+
+    <div class="boxRestContra">
+      <ion-button fill="clear" class="boton-ingresar" (click)="ingresar()">Ingresar</ion-button>
+    </div>
+    
+    
+
+
+  </ion-card>
+
+
+</ion-content>

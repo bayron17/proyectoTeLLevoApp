@@ -1,0 +1,67 @@
+// style header 
+// .titulo-login{
+//     text-align: center;
+//     font-size: 25px;
+//     font-family: 'sans-serif';
+//     margin: auto;
+//     height: 100%;
+// }
+
+// .item-titulo{
+//     flex-direction: column;
+//     height: 100%;
+
+// }  Este codigo puede ser borrado ya que se encuentra en el scss global
+
+.titulo-bienvenido{
+    // margin-left: 15%;
+    margin-top: 12%;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+
+// style formulario registrok
+ion-content{
+    height: 100vh;
+}
+
+ion-card{
+    height: 70vh;
+    margin: auto;
+    max-width: 500px;
+    margin-bottom: 18%;
+}
+
+ion-list{
+     padding-top: 10%;
+    // height: 69vh;
+    border-radius: 15px;
+}
+
+ion-item{
+    margin-bottom: 30px;
+}
+
+// style boton crear usuario
+.container-boton{
+    display: flex;
+    justify-content: end;
+    padding-right: 3%;
+}
+
+.boton-registrar{
+    color: #fff;
+}
+
+.boton-registrar:hover{
+    box-shadow: 5px 5px #666;
+    transition: .3s;
+    border-radius: 5px;
+}
+
+// style iconos 
+.iconos-registro{
+    width: 50px;
+    height: 50px;
+}
+
