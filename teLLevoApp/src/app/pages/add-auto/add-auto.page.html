@@ -1,0 +1,45 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Agregar Auto</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+ 
+<ng-container>
+  <ion-row>
+    <ion-list>
+
+      <ion-item>
+        <ion-input [(ngModel)]="marca" label="Marca:" placeholder="ej: mg"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input [(ngModel)]="modelo" label="Modeló:" placeholder="ej: 3"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input [(ngModel)]="patente" label="Patente:" placeholder="ej: xy-34-23"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input [(ngModel)]="color" label="Color:" placeholder="ej: Negro"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input [(ngModel)]="capacidad" label="Capacidad:" placeholder="ej: 4"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input [(ngModel)]="duenio" label="Dueño:" placeholder="ej: Matias Pavez"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input [(ngModel)]="anio" label="Año:" placeholder="ej: 2023" ></ion-input>
+      </ion-item>
+      <ion-col size="4"><ion-button  type="buton" (click)="agregaV()">Agregar Auto</ion-button></ion-col>
+    </ion-list>
+  </ion-row>
+</ng-container>
+
+</ion-content>

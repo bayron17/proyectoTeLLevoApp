@@ -14,8 +14,8 @@
 // }  Este codigo puede ser borrado ya que se encuentra en el scss global
 
 .titulo-bienvenido{
-    // margin-left: 15%;
-    margin-top: 12%;
+    margin-right: 5%;
+    margin-top: 14%;
     font-family: 'Times New Roman', Times, serif;
     font-weight: bold;
 }
@@ -26,9 +26,9 @@ ion-content{
 }
 
 ion-card{
-    height: 70vh;
+    height: 85vh;
     margin: auto;
-    max-width: 500px;
+    max-width: 1000px;
     margin-bottom: 18%;
 }
 
@@ -50,7 +50,7 @@ ion-item{
 }
 
 .boton-registrar{
-    color: #fff;
+    color: #000 ;
 }
 
 .boton-registrar:hover{

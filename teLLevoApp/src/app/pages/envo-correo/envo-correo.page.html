@@ -1,12 +1,16 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-button (click)="logOut()" slot="end">
-      <ion-icon name="log-out-outline"></ion-icon>
-    </ion-button>
-
+    
     <ion-list class="contenedor-titulo">
       <ion-item class="item-titulo">
-        <ion-label class="titulo-login"><img src="../../../assets/img/Logotipo.png" alt="" width="150px"></ion-label>
+        <ion-button (click)="logOut()" slot="end">
+          <ion-icon name="log-out-outline"></ion-icon>
+        </ion-button>
+        <ion-col>
+          <ion-icon name="car-sport-outline" id="icono"></ion-icon>
+          <h6 id="textotitle">tellevoapp</h6>
+        </ion-col>
+        <!-- <ion-label class="titulo-login"><img src="../../../assets/img/Logotipo.png" alt="" width="150px"></ion-label> -->
       </ion-item>
     </ion-list>
   

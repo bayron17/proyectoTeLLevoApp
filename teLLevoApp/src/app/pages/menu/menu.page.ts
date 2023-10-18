@@ -20,17 +20,26 @@ export class MenuPage implements OnInit {
   constructor(private router:Router,private animationCtrl: AnimationController) { }
 
   cargarMenu(){
+    let paramSoli = 15161718;
+    let paramDis = 19202122;
+    let paramAddCar = 23242526;
     this.menuArray.push(
       {
         id:1,
         titulo:"solicitar",
-        url:"/solicitar",
+        url:"/"+ paramSoli + "/solicitar",
         icono:"chevron-forward-outline"
       },
       {
         id:2,
         titulo:"disponibilidad",
-        url:"/disponibilidad",
+        url:"/"+ paramDis + "/disponibilidad",
+        icono:"chevron-forward-outline",
+      },
+      {
+        id:3,
+        titulo:"agregar Auto",
+        url:"/"+ paramAddCar + "/add-auto",
         icono:"chevron-forward-outline",
       }
     );

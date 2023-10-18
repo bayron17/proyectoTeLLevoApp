@@ -1,11 +1,13 @@
 
 .titulo-login{
-    text-align: center;
+    // margin-right: 20px;
+    display: flex;
+    justify-content: center;   
+    // text-align: center;
     font-size: 25px;
     font-family: 'sans-serif';
-    margin: auto;
-    height: 100%;
- }
+    // margin-bottom: 10%;
+}
 
  .item-titulo{
      flex-direction: column;
@@ -13,8 +15,8 @@
 }
 
 .titulo-bienvenido{
-    // margin-left: 4%;
-    margin-top: 1%;
+    display: flex;
+    align-items: flex-end;
     font-family: 'Times New Roman', Times, serif;
     font-weight: bold;
 }
@@ -41,7 +43,7 @@ ion-item{
 ion-button{
     margin-top: 20px;
     margin-bottom: 20px;
-    color: #fff;
+    color: #000;
 }
 
 .boxRestContra{

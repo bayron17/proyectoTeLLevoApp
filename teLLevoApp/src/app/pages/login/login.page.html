@@ -6,11 +6,11 @@
         <ion-label class="titulo-login"><img src="../../../assets/img/Logotipo.png" alt="" width="150px"></ion-label>
       </ion-item>
     </ion-list>
+      
+    <ion-title class="titulo-bienvenido">
+      <h5 class="text-center">Bienvenidos</h5>
+    </ion-title>
   </ion-toolbar>
-  
-  <ion-title class="titulo-bienvenido">
-    <h5>Bienvenidos</h5>
-  </ion-title>
 
 </ion-header>
 
@@ -20,13 +20,13 @@
 
     <ion-card-content>
       <ion-item class="item-input">
-        <ion-input [(ngModel)]="user" class="input-user" labelPlacement="floating" value="name123">
+        <ion-input [(ngModel)]="email" class="input-user" labelPlacement="floating" value="name123">
           <div slot="label">Usuario <ion-text color="danger">(Required)</ion-text></div>
         </ion-input>
       </ion-item>
 
       <ion-item class="item-input">
-        <ion-input [(ngModel)]="password" class="input-password" label="Contraseña"  labelPlacement="floating" type="password" value="password"></ion-input>
+        <ion-input [(ngModel)]="contrasena" class="input-password" label="Contraseña"  labelPlacement="floating" type="password"></ion-input>
       </ion-item>
       
       <ion-grid>

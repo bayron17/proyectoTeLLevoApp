@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { disponibilidad } from 'src/app/models/disponibilidad';
+import { StorageAutosService } from 'src/app/service/storage-autos.service';
 
 @Component({
   selector: 'app-disponibilidad',
@@ -8,31 +9,15 @@ import { disponibilidad } from 'src/app/models/disponibilidad';
 })
 export class DisponibilidadPage implements OnInit {
 
-  disponibilidadArray:disponibilidad[]=[]
+  disponibilidadArray:any;
+  constructor(private storageAuto:StorageAutosService) { }
 
-  constructor() { }
-
-  cargarDisponibilidad(){
-    this.disponibilidadArray.push(
-      {
-        patente: "GS BB 20",
-        modelo: "Citroen c4",
-        destino: "Av Vickuña Mackenna 4917",
-        cPasajeros: 1,
-        conductor: "Armando Mochas",
-        costo:3000
-      },
-      {
-        patente: "GG EZ 15",
-        modelo: "Toyota trueno ae86",
-        destino: "Av Irarrazaval 2928",
-        cPasajeros: 2,
-        conductor: "Armando Mochas",
-        costo:3000
-      }
-    )
+  async cargarDisponibilidad(){
+    this.disponibilidadArray = await this.storageAuto.obtenerAuto();
+    console.log("Mostrar Vehiculo:",await this.disponibilidadArray);
   }
 
+ 
   ngOnInit() {
     this.cargarDisponibilidad();
   }

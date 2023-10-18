@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-envo-correo',
@@ -8,12 +8,19 @@ import { Router } from '@angular/router';
 })
 export class EnvoCorreoPage implements OnInit {
 
-  constructor(private router:Router) { }
+  constructor(private router:Router,
+              private activatedRoute:ActivatedRoute
+    ) { }
+
+  parametroUrl:number | undefined;
+
 
   ngOnInit() {
+    this.parametroUrl = this.activatedRoute.snapshot.params["num4"];
+    console.log("parametro: ", this.parametroUrl);
   }
 
  logOut(){
-  this.router.navigateByUrl("recuperar-password")
+  this.router.navigateByUrl(":num2/recuperar-password")
  }
 }
