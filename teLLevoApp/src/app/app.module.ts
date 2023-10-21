@@ -17,9 +17,11 @@ import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFireAuthModule,HttpClientModule
+  imports: [BrowserModule,
+            IonicModule.forRoot(),
+            AppRoutingModule,
+            AngularFireModule.initializeApp(environment.firebaseConfig),
+            AngularFireAuthModule,HttpClientModule
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],

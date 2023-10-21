@@ -1,8 +1,9 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import { AnimationController, IonCard } from '@ionic/angular';
 import type { Animation } from '@ionic/angular';
+import { IonCard , AnimationController, MenuController} from '@ionic/angular';
 import { Menu } from 'src/app/models/menu';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 
 @Component({
   selector: 'app-menu',
@@ -17,7 +18,14 @@ export class MenuPage implements OnInit {
 
   menuArray:Menu[]=[]
 
-  constructor(private router:Router,private animationCtrl: AnimationController) { }
+  user:any;
+
+  public aaa:any[]=[]
+  constructor(private router:Router,
+              private animationCtrl: AnimationController,
+              private auth:AngularFireAuth, 
+              private menuCtrl:MenuController,
+              ) { }
 
   cargarMenu(){
     let paramSoli = 15161718;
@@ -61,14 +69,50 @@ export class MenuPage implements OnInit {
 
   ngOnInit() {
     this.cargarMenu();
+    this.mostrarUser();
   }
 
   ionViewWillEnter(){
     this.play();
   }
 
-  logOut(){
-    this.router.navigateByUrl("login");
+  async logOut(){
+    await this.auth.signOut();
+     this.router.navigateByUrl("login");
   }
 
+  async salir(){
+    await this.auth.signOut();
+  }
+
+  cerrarMenu(){
+    this.menuCtrl.close();
+  }
+
+  toggle(){
+    this.menuCtrl.toggle();
+  }
+
+  perfil(){
+    this.router.navigateByUrl('perfil');
+  }
+
+//  traemos al usuario
+async mostrarUser() {
+  await this.auth.onAuthStateChanged((user) => {
+    const eee = user?.email;
+    if(!this.aaa.length){
+      this.aaa.push(eee);
+      console.log(this.aaa);
+    }else{
+      this.aaa = [];
+      // this.aaa[0] =
+       this.aaa.push(eee)
+    }
+   
+    
+
+  //  console.log("222222",this.user.filter((e: { Email: string | null | undefined; }) => e.Email == user?.email));
+  });
+}
 }

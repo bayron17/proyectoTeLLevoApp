@@ -15,7 +15,7 @@
 
 .titulo-bienvenido{
     margin-right: 5%;
-    margin-top: 14%;
+    margin-top: 10%;
     font-family: 'Times New Roman', Times, serif;
     font-weight: bold;
 }
@@ -26,13 +26,13 @@ ion-content{
 }
 
 ion-card{
-    height: 85vh;
+    height: 100vh;
     margin: auto;
     max-width: 1000px;
     margin-bottom: 18%;
 }
 
-ion-list{
+form{
      padding-top: 10%;
     // height: 69vh;
     border-radius: 15px;
@@ -65,3 +65,7 @@ ion-item{
     height: 50px;
 }
 
+// alerta validaciones
+span{
+    color: red;
+}

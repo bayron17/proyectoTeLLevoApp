@@ -5,7 +5,7 @@
       <ion-item class="item-titulo">
 
         <ion-button (click)="logOut()" slot="end">
-          <ion-icon name="log-out-outline"></ion-icon>
+          <ion-icon id="out" name="log-out-outline"></ion-icon>
         </ion-button>
 
         <ion-label class="titulo-login"><img src="../../../assets/img/Logotipo.png" alt="" width="150px"></ion-label>
@@ -23,38 +23,41 @@
 
 <ion-content [fullscreen]="true">
   <ion-card>
-    <ion-card-content>
-      <ion-list>
+      <form>
         <ion-item>
           <ion-thumbnail slot="start">
             <ion-icon class="iconos-registro" name="accessibility-outline"></ion-icon>          
           </ion-thumbnail>
-              <ion-input label="Nombre completo"  labelPlacement="floating" type="text"></ion-input>
-        </ion-item>
+                <ion-input [(ngModel)]="nombreCom" name="nombreCom" label="Nombre completo"  labelPlacement="floating" type="text"></ion-input>
+                <span *ngIf="valiNom">{{valiNom}}</span>
+            </ion-item>
 
         <ion-item>
           <ion-thumbnail slot="start">
             <ion-icon class="iconos-registro" name="mail-outline"></ion-icon>        
           </ion-thumbnail>
-              <ion-input [(ngModel)]="email" label="email@email.com"  labelPlacement="floating" type="text"></ion-input>
+              <ion-input [(ngModel)]="email" name="email" label="email@email.com"  labelPlacement="floating" type="text"></ion-input>
+              <span *ngIf="valiEmail">{{valiEmail}}</span>
         </ion-item>
   
         <ion-item>
           <ion-thumbnail slot="start">
             <ion-icon class="iconos-registro" name="person-circle-outline"></ion-icon>        
           </ion-thumbnail>
-          <ion-input label="user"  labelPlacement="floating" type="text"></ion-input>
+          <ion-input [(ngModel)]="user" label="user" name="user" labelPlacement="floating" type="text"></ion-input>
+          <span *ngIf="valiUser">{{valiUser}}</span>
         </ion-item>
   
         <ion-item>
           <ion-thumbnail slot="start">
             <ion-icon class="iconos-registro" name="lock-closed-outline"></ion-icon></ion-thumbnail>
-          <ion-input [(ngModel)]="contrasena" class="input-password" label="Password input"  labelPlacement="floating" type="password" value="password"></ion-input>
+          <ion-input [(ngModel)]="contrasena" name="contrasena" class="input-password" label="Password input"  labelPlacement="floating" type="password" value="password"></ion-input>
+          <span *ngIf="valiPassword">{{valiPassword}}</span>
         </ion-item>
 
         <ion-list>
           <ion-item>
-            <ion-select (ionChange)="cargarComuna()" placeholder="Seleccione Region" [(ngModel)]="regionSeleccionado">
+            <ion-select (ionChange)="cargarComuna()" placeholder="Seleccione Region" [(ngModel)]="regionSeleccionado" name="regionSeleccionado">
               <ion-select-option [value]="i.id" *ngFor="let i of regiones">{{i.nombre}}</ion-select-option>
             </ion-select>
           </ion-item> 
@@ -62,7 +65,7 @@
   
         <ion-list>
           <ion-item>
-            <ion-select placeholder="Seleccione Comuna" [(ngModel)]="comunaSeleccionada">
+            <ion-select placeholder="Seleccione Comuna" [(ngModel)]="comunaSeleccionada" name="comunaSeleccionada">
               <ion-select-option [value]="i.id" *ngFor="let i of comunas">{{i.nombre}}</ion-select-option>
             </ion-select>
           </ion-item>
@@ -74,7 +77,6 @@
 
       <br>
 
-      </ion-list>
-    </ion-card-content>
+    </form>
   </ion-card>
 </ion-content>

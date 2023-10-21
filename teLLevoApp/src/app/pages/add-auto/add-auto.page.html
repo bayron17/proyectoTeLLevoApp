@@ -1,6 +1,11 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
+   
     <ion-title>Agregar Auto</ion-title>
+
+    <ion-buttons slot="start">
+      <ion-back-button>logout</ion-back-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -9,35 +14,49 @@
 <ng-container>
   <ion-row>
     <ion-list>
+      <form>
 
-      <ion-item>
-        <ion-input [(ngModel)]="marca" label="Marca:" placeholder="ej: mg"></ion-input>
-      </ion-item>
+        <ion-item >
+          <ion-input [(ngModel)]="marca" label="Marca:" name="mar" placeholder="ej: mg"></ion-input>
+          <span *ngIf="Validacionmarca">{{Validacionmarca}}</span>
+        </ion-item>
+  
+        <ion-item>
+          <ion-input [(ngModel)]="modelo" label="Modeló:" name="mod" placeholder="ej: 3"></ion-input>
+          <span *ngIf="Validacionmodelo">{{Validacionmodelo}}</span>
+        </ion-item>
+  
+        <ion-item>
+          <ion-input [(ngModel)]="patente" label="Patente:" name="pat" placeholder="ej: xy-34-23"></ion-input>
+          <span *ngIf="Validacionpatente">{{Validacionpatente}}</span>
+        </ion-item>
+  
+        <ion-item>
+          <ion-input [(ngModel)]="color" label="Color:" name="col" placeholder="ej: Negro"></ion-input>
+          <span *ngIf="Validacioncolor">{{Validacioncolor}}</span>
+        </ion-item>
+  
+        <ion-item>
+          <ion-input [(ngModel)]="capacidad" label="Capacidad:" name="cap" placeholder="ej: 4"></ion-input>
+          <span *ngIf="Validacioncapacidad">{{Validacioncapacidad}}</span>
+        </ion-item>
+  
+        <ion-item>
+          <ion-input [(ngModel)]="duenio" label="Dueño:" name="mar"due placeholder="ej: Matias Pavez"></ion-input> 
+          <span *ngIf="Validacionduenio">{{Validacionduenio}}</span>
+        </ion-item>
+  
+        <ion-item>
+          <ion-input [(ngModel)]="anio" label="Año:" name="mar"anio placeholder="ej: 2023" ></ion-input>
+          <span *ngIf="Validacionanio">{{Validacionanio}}</span>
+        </ion-item>
 
-      <ion-item>
-        <ion-input [(ngModel)]="modelo" label="Modeló:" placeholder="ej: 3"></ion-input>
-      </ion-item>
+        <br>
 
-      <ion-item>
-        <ion-input [(ngModel)]="patente" label="Patente:" placeholder="ej: xy-34-23"></ion-input>
-      </ion-item>
-
-      <ion-item>
-        <ion-input [(ngModel)]="color" label="Color:" placeholder="ej: Negro"></ion-input>
-      </ion-item>
-
-      <ion-item>
-        <ion-input [(ngModel)]="capacidad" label="Capacidad:" placeholder="ej: 4"></ion-input>
-      </ion-item>
-
-      <ion-item>
-        <ion-input [(ngModel)]="duenio" label="Dueño:" placeholder="ej: Matias Pavez"></ion-input>
-      </ion-item>
-
-      <ion-item>
-        <ion-input [(ngModel)]="anio" label="Año:" placeholder="ej: 2023" ></ion-input>
-      </ion-item>
-      <ion-col size="4"><ion-button  type="buton" (click)="agregaV()">Agregar Auto</ion-button></ion-col>
+        <!-- <ion-button  type="buton">Agregar Auto</ion-button> -->
+        <ion-col ><ion-button type="buton" (click)="agregaV()">Agregar Auto</ion-button></ion-col> 
+      </form>
+     
     </ion-list>
   </ion-row>
 </ng-container>

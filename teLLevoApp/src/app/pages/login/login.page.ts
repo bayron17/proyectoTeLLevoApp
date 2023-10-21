@@ -3,6 +3,8 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HelperService } from 'src/app/service/helper.service';
 import { CapacitorConfig } from '@capacitor/cli';
+import { Geolocation } from '@capacitor/geolocation';
+
 
 
 @Component({
@@ -24,35 +26,16 @@ export class LoginPage implements OnInit {
 
   ngOnInit() {
     this.parametroUrl = this.activatedRoute.snapshot.params["num2"];
-    console.log("parametro: ", this.parametroUrl);
+    this.printCurrentPosition();
   }
 
+
+  printCurrentPosition = async () => {
+    const coordinates = await Geolocation.getCurrentPosition();
   
- getCookie(name: string): string {
-  const cookieName = `${name}`;
-  const cookies = document.cookie.split(';');
-  for (let i = 0; i < cookies.length; i++) {
-    let cookie = cookies[i].trim();
-    if (cookie.indexOf(cookieName) === 0) {
-      return cookie.substring(cookieName.length, cookie.length);
-    }
-  }
-  return cookieName;
-}
-
-// Ejemplo de uso en un método
-obtenerValorDeCookie():string {
-  const cookieName = 'Alerta de todas las cooqies';
-  const valorCookie = this.getCookie(cookieName);
-  console.log('Valor de la cookie: ', valorCookie);
-  return valorCookie;
-}
-
-ionViewDidEnter(){
-  this.helperService.showAlert("Confirme Cokkie", this.obtenerValorDeCookie());
-  // console.log("Coquies",this.obtenerValorDeCookie())
-}
-
+    // console.log('Current position:', coordinates);    
+    await this.helperService.showToast("Su geolocalizacion es:"+ coordinates.timestamp)
+  };
 
   async ingresar(){
 
@@ -69,7 +52,6 @@ ionViewDidEnter(){
       const loader = await this.helperService.showLoading("Cargando");
       
       const req = await this.auth.signInWithEmailAndPassword(this.email,this.contrasena);
-      console.log("TOKEN",await req.user?.getIdToken());
       await this.router.navigateByUrl(param + "/menu");
       await loader.dismiss();
 

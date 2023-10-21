@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Preferences } from '@capacitor/preferences';
 
-const key = "addCar";
+const key12 = "addCar";
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +20,7 @@ export class StorageAutosService {
  }
 
  async obtenerAuto(){
-  const storageAuto = await this.obtenerItem(key);
+  const storageAuto = await this.obtenerItem(key12);
   if (storageAuto == null){
    return []
   }
@@ -41,7 +41,11 @@ export class StorageAutosService {
       }
     }
 
-    this.setItem(key,JSON.stringify(vehicu));
+    this.setItem(key12,JSON.stringify(vehicu));
  }
 
+
+
 }
+
+
