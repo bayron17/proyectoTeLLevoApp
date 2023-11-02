@@ -1,16 +1,18 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-             
-    <ion-button (click)="logOut()" slot="end">
-      <ion-icon name="log-out-outline"></ion-icon>
-    </ion-button>
-    
-      <ion-list class="contenedor-titulo">
-        <ion-item class="item-titulo">
-          <ion-label class="titulo-login"><img src="../../../assets/img/Logotipo.png" alt="" width="150px"></ion-label>
-        </ion-item>
-      </ion-list>
+      
 
+      <ion-col size="2" (click)="logOut()" slot="end" id="colBTNout" style="height: 100px;">
+        <ion-icon name="log-out-outline" id="iconoLogOut"></ion-icon>
+      </ion-col>
+      
+        <ion-col size="auto" class="contenedor-titulo">
+          <ion-item class="item-titulo">
+            <ion-label class="titulo-login"><img src="../../../assets/img/Logotipo.png" alt="" width="150px" id="imagIcono"></ion-label>
+          </ion-item>
+        </ion-col>
+  
+    
      </ion-toolbar>
 </ion-header>
 
@@ -39,13 +41,14 @@
     <ion-header>
       <ion-toolbar>
         <ion-buttons slot="start">
-          <ion-menu-button></ion-menu-button>
+          <ion-menu-button id="botonMenu"></ion-menu-button>
         </ion-buttons>
         <ion-title></ion-title>
       </ion-toolbar>
     </ion-header>
     <ion-content class="ion-padding"> </ion-content>
   </div>
+
 <br>
 <br>
   <ng-container>

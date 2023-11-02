@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 import { HelperService } from 'src/app/service/helper.service';
 import { StorageAutosService } from 'src/app/service/storage-autos.service';
 
@@ -28,10 +29,14 @@ export class AddAutoPage implements OnInit {
    Validacionanio:string = "";
 
   constructor(private helper:HelperService,
-              private storageAuto:StorageAutosService) { }
+              private storageAuto:StorageAutosService,
+              private router:Router) { }
 
   ngOnInit() {
     this.viewAuto();
+  }
+  logOut(){
+     this.router.navigateByUrl("num8/menu");
   }
 
   async viewAuto(){
@@ -100,8 +105,7 @@ export class AddAutoPage implements OnInit {
       this.Validacionanio = "";
     }
   }
-  async agregaV()
-  {
+  async agregaV(){
     this.validarMarca();
     this.validarModelo();
     this.validarPatente();
@@ -136,5 +140,6 @@ export class AddAutoPage implements OnInit {
       }
     }
   }
+
 
 }

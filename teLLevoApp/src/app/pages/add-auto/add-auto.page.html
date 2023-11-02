@@ -1,64 +1,75 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-   
-    <ion-title>Agregar Auto</ion-title>
 
-    <ion-buttons slot="start">
-      <ion-back-button>logout</ion-back-button>
-    </ion-buttons>
+    <ion-title id="tituloHeader">
+      <h5 class="text-center"> Agregar Auto</h5>
+    </ion-title>
+
+   
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
- 
-<ng-container>
-  <ion-row>
-    <ion-list>
-      <form>
 
-        <ion-item >
-          <ion-input [(ngModel)]="marca" label="Marca:" name="mar" placeholder="ej: mg"></ion-input>
-          <span *ngIf="Validacionmarca">{{Validacionmarca}}</span>
-        </ion-item>
-  
-        <ion-item>
-          <ion-input [(ngModel)]="modelo" label="Modeló:" name="mod" placeholder="ej: 3"></ion-input>
-          <span *ngIf="Validacionmodelo">{{Validacionmodelo}}</span>
-        </ion-item>
-  
-        <ion-item>
-          <ion-input [(ngModel)]="patente" label="Patente:" name="pat" placeholder="ej: xy-34-23"></ion-input>
-          <span *ngIf="Validacionpatente">{{Validacionpatente}}</span>
-        </ion-item>
-  
-        <ion-item>
-          <ion-input [(ngModel)]="color" label="Color:" name="col" placeholder="ej: Negro"></ion-input>
-          <span *ngIf="Validacioncolor">{{Validacioncolor}}</span>
-        </ion-item>
-  
-        <ion-item>
-          <ion-input [(ngModel)]="capacidad" label="Capacidad:" name="cap" placeholder="ej: 4"></ion-input>
-          <span *ngIf="Validacioncapacidad">{{Validacioncapacidad}}</span>
-        </ion-item>
-  
-        <ion-item>
-          <ion-input [(ngModel)]="duenio" label="Dueño:" name="mar"due placeholder="ej: Matias Pavez"></ion-input> 
-          <span *ngIf="Validacionduenio">{{Validacionduenio}}</span>
-        </ion-item>
-  
-        <ion-item>
-          <ion-input [(ngModel)]="anio" label="Año:" name="mar"anio placeholder="ej: 2023" ></ion-input>
-          <span *ngIf="Validacionanio">{{Validacionanio}}</span>
-        </ion-item>
+  <ng-container>
 
-        <br>
+    <ion-row>
+      <ion-list>
+        <form>
 
-        <!-- <ion-button  type="buton">Agregar Auto</ion-button> -->
-        <ion-col ><ion-button type="buton" (click)="agregaV()">Agregar Auto</ion-button></ion-col> 
-      </form>
-     
-    </ion-list>
-  </ion-row>
-</ng-container>
+          <ion-item>
+            <ion-input [(ngModel)]="marca" label="Marca:" name="mar" placeholder="ej: mg"></ion-input>
+            <span *ngIf="Validacionmarca">{{Validacionmarca}}</span>
+          </ion-item>
+
+          <ion-item>
+            <ion-input [(ngModel)]="modelo" label="Modeló:" name="mod" placeholder="ej: 3"></ion-input>
+            <span *ngIf="Validacionmodelo">{{Validacionmodelo}}</span>
+          </ion-item>
+
+          <ion-item>
+            <ion-input [(ngModel)]="patente" label="Patente:" name="pat" placeholder="ej: xy-34-23"></ion-input>
+            <span *ngIf="Validacionpatente">{{Validacionpatente}}</span>
+          </ion-item>
+
+          <ion-item>
+            <ion-input [(ngModel)]="color" label="Color:" name="col" placeholder="ej: Negro"></ion-input>
+            <span *ngIf="Validacioncolor">{{Validacioncolor}}</span>
+          </ion-item>
+
+          <ion-item>
+            <ion-input [(ngModel)]="capacidad" label="Capacidad:" name="cap" placeholder="ej: 4"></ion-input>
+            <span *ngIf="Validacioncapacidad">{{Validacioncapacidad}}</span>
+          </ion-item>
+
+          <ion-item>
+            <ion-input [(ngModel)]="duenio" label="Dueño:" name="mar" due placeholder="ej: Matias Pavez"></ion-input>
+            <span *ngIf="Validacionduenio">{{Validacionduenio}}</span>
+          </ion-item>
+
+          <ion-item>
+            <ion-input [(ngModel)]="anio" label="Año:" name="mar" anio placeholder="ej: 2023"></ion-input>
+            <span *ngIf="Validacionanio">{{Validacionanio}}</span>
+          </ion-item>
+
+          <br>
+
+          <ion-row>
+            <ion-col (click)="logOut()" id="colBTNout">
+              <ion-icon name="log-out-outline" style="width: 60px; height: 60px;"></ion-icon>
+            </ion-col>
+            <ion-col id="colBtn">
+              <ion-button (click)="agregaV()" color="danger" id="btnAddCar">
+                Agregar Auto
+              </ion-button>
+            </ion-col>
+          </ion-row>
+         
+        </form>
+
+      </ion-list>
+    </ion-row>
+
+  </ng-container>
 
 </ion-content>
