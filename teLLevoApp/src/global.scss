@@ -45,13 +45,15 @@
 // header titulo
 .tituloHeader{
    
-    background-color: #ad0505;
+    --background: #ad0505 !important;
     max-width: 90%;
     margin-left: 5%;
     border-radius: 20px;
+
 }
 .tituloHeader h5{
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-weight: bolder;
     color: #fff;
 }
+

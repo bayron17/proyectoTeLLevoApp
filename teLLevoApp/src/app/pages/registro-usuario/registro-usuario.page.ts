@@ -106,8 +106,15 @@ export class RegistroUsuarioPage implements OnInit {
     if(this.nombreCom.length == 0 || this.email.length == 0 ||this.user.length == 0 || this.contrasena.length == 0 ||  this.regionSeleccionado == 0 || this.comunaSeleccionada == 0){
       this.valiCamposVacidos = this.helper.showAlert(" Complete todos los campos para continuar"," Datos del usuario incompletos");
     }else{
-      
+
+    const regi = this.regiones.find(region => region.id === this.regionSeleccionado);
+    const nomregi = regi ? regi.nombre : "region no encontrada"
+
+    const comu = this.comunas.find(comuna => comuna.id === this.comunaSeleccionada);
+    const nomcomu = comu ? comu.nombre : "comuna no encontrada"
+    
     const loader = await this.helper.showLoading("Cargando");
+
     try{
       const request = await this.auth.createUserWithEmailAndPassword(this.email,this.contrasena);
       var user = [{
@@ -115,8 +122,8 @@ export class RegistroUsuarioPage implements OnInit {
         Usuario:this.user,
         Password:this.contrasena,
         Email:this.email,
-        Region:this.regionSeleccionado,
-        Comuna:this.comunaSeleccionada
+        Region:nomregi,
+        Comuna:nomcomu
       }]
       
       this.storgeUser.agregarUser(user);

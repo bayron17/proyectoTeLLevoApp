@@ -32,33 +32,31 @@ export class LoginPage implements OnInit {
 
   printCurrentPosition = async () => {
     const coordinates = await Geolocation.getCurrentPosition();
-  
+    const longitud = await coordinates.coords.longitude;
+    const latitude = await coordinates.coords.latitude;
     // console.log('Current position:', coordinates);    
-    await this.helperService.showToast("Su geolocalizacion es:"+ coordinates.timestamp)
+    await this.helperService.showToast("Su geolocalizacion es:" + "longitud " + longitud + "," + "Latitud " + latitude);
   };
 
   async ingresar(){
 
-    if(this.email == ""){
-      this.helperService.showAlert("El email se encuentra vacio","ERROR")
+    if(this.email == "" || this.contrasena == ""){
+      this.helperService.showAlert("El email o contraseña se encuentra vacio","ERROR")
       return
-    }
-    if(this.contrasena == ""){
-      this.helperService.showAlert("La contraseña se encuentra vacia","ERROR")
-    }
-
+    }else{
+      
     try{
       let param = 27282930;
       const loader = await this.helperService.showLoading("Cargando");
-      
       const req = await this.auth.signInWithEmailAndPassword(this.email,this.contrasena);
       await this.router.navigateByUrl(param + "/menu");
       await loader.dismiss();
-
       
     }catch(error){
 
     }
+    }
+    
   }
 
   registrarse(){

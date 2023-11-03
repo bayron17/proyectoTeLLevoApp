@@ -40,7 +40,7 @@ export class AddAutoPage implements OnInit {
   }
 
   async viewAuto(){
-  console.log("Vheiculo:",await this.storageAuto.obtenerAuto());
+  console.log("Vheiculos agregados:",await this.storageAuto.obtenerAuto());
   }
 
   validarMarca(){
@@ -117,6 +117,7 @@ export class AddAutoPage implements OnInit {
     if(this.marca.length == 0|| this.modelo.length == 0|| this.patente .length== 0|| this.color.length == 0|| this.capacidad.length == 0|| this.duenio.length  == 0 || this.anio.length == 0){
       this.ValiCamposVacio = this.helper.showAlert("Complete todos los campos solicitado para continuar","Campo incompleto");
     }else{
+
       const loader = await this.helper.showLoading('Cargando');
       try{
         var veh = [
@@ -132,7 +133,7 @@ export class AddAutoPage implements OnInit {
                   ]
   
         this.storageAuto.agregarVehiculo(veh);
-        console.log("vehicuklo agregado");
+        this.helper.showAlert("Su vehiculo fue agregado exitosamente","Vehiculo agregado");
   
         loader.dismiss();
       }catch(error:any){

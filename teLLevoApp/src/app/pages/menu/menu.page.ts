@@ -4,6 +4,7 @@ import type { Animation } from '@ionic/angular';
 import { IonCard , AnimationController, MenuController} from '@ionic/angular';
 import { Menu } from 'src/app/models/menu';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { StorageUserService } from 'src/app/service/storage-user.service';
 
 @Component({
   selector: 'app-menu',
@@ -21,10 +22,12 @@ export class MenuPage implements OnInit {
   user:any;
 
   public aaa:any[]=[]
+   descripcionUser: any[] = [];
   constructor(private router:Router,
               private animationCtrl: AnimationController,
               private auth:AngularFireAuth, 
               private menuCtrl:MenuController,
+              private storageUser:StorageUserService
               ) { }
 
   cargarMenu(){
@@ -103,13 +106,14 @@ async mostrarUser() {
     const eee = user?.email;
     if(!this.aaa.length){
       this.aaa.push(eee);
-      console.log(this.aaa);
     }else{
       this.aaa = [];
       // this.aaa[0] =
        this.aaa.push(eee)
     }
+    
    
+
     
 
   //  console.log("222222",this.user.filter((e: { Email: string | null | undefined; }) => e.Email == user?.email));

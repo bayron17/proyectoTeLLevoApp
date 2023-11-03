@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
 import { Preferences } from '@capacitor/preferences';
 
 
@@ -13,7 +13,8 @@ export class StorageUserService {
   public Correo = "";
 
 
-  constructor() { }
+  constructor(@Inject(localStorage) private localStorage: StorageUserService) { }
+
 
   async obtenerItem(llave:string):Promise<string | null>{
     const item = await Preferences.get({key:llave});
@@ -40,6 +41,7 @@ export class StorageUserService {
     }
   }
 
+ 
   async agregarUser(usuaNew:any[]){
 
     const usuario = await this.obtenerUser();

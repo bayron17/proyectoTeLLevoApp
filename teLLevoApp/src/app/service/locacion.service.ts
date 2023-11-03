@@ -20,11 +20,6 @@ export class LocacionService {
     return await lastValueFrom(this.http.get<apiResponse<Region>>(`${environment.apiurl}region`));
   }
 
-  // async obtenerComuna(regionId:number){
-  //   return await lastValueFrom(this.http.get<apiResponse<Region>>(`${environment.apiurl}comuna/` + regionId));
-
-  // }
-
   async obtenerComuna(regionId:number){
     return await lastValueFrom(this.http.get<apiResponse<Region>>(`${environment.apiurl}comuna/` + regionId));
   }

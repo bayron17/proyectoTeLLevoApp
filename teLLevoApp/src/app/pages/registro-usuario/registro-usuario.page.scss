@@ -1,25 +1,9 @@
-// style header 
-// .titulo-login{
-//     text-align: center;
-//     font-size: 25px;
-//     font-family: 'sans-serif';
-//     margin: auto;
-//     height: 100%;
-// }
 
-// .item-titulo{
-//     flex-direction: column;
-//     height: 100%;
-
-// }  Este codigo puede ser borrado ya que se encuentra en el scss global
-
-.titulo-bienvenido{
-    margin-right: 5%;
-    margin-top: 10%;
-    font-family: 'Times New Roman', Times, serif;
-    font-weight: bold;
+.out{
+    width: 60px;
+    height: 60px;
+    --background: black;
 }
-
 // style formulario registrok
 ion-content{
     height: 100vh;

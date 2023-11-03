@@ -1,20 +1,16 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
+
     <ion-list class="contenedor-titulo">
-      
       <ion-item class="item-titulo">
-
-        <ion-button (click)="logOut()" slot="end">
-          <ion-icon id="out" name="log-out-outline"></ion-icon>
-        </ion-button>
-
         <ion-label class="titulo-login"><img src="../../../assets/img/Logotipo.png" alt="" width="150px"></ion-label>
-        
       </ion-item>
-
     </ion-list>
     
-    <ion-title class="titulo-bienvenido">
+  </ion-toolbar>
+  
+  <ion-toolbar class="tituloHeader">
+    <ion-title>
       <h5>registrarte aquí</h5>
     </ion-title>
   </ion-toolbar>
@@ -22,8 +18,11 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
+
   <ion-card>
+   
       <form>
+
         <ion-item>
           <ion-thumbnail slot="start">
             <ion-icon class="iconos-registro" name="accessibility-outline"></ion-icon>          
@@ -70,10 +69,19 @@
             </ion-select>
           </ion-item>
         </ion-list>
-      
-        <div class="container-boton">
-          <ion-button fill="clear" class="boton-registrar" (click)="registro()">Registrar</ion-button>
-      </div>
+
+        <ion-row>
+          <ion-col>
+            <ion-col (click)="logOut()">
+              <ion-icon name="log-out-outline" class="out"></ion-icon>
+            </ion-col>
+          </ion-col>
+          <ion-col>
+            <div class="container-boton">
+              <ion-button fill="clear" class="boton-registrar" (click)="registro()">Registrar</ion-button>
+          </div>
+          </ion-col>
+        </ion-row>
 
       <br>
 

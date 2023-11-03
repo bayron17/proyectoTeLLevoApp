@@ -3,21 +3,6 @@ body{
     padding: 0;
 }
 
-#tituloHeader{  
-    margin-left: 5%;
-    width: 90%;
-    border-radius: 20px;
-    background-color: #ad0505;
-
-}
-
-#tituloHeader h5{
-    font-family: Georgia,'Times New Roman', Times, serif;
-    font-weight: bolder;
-    color: #fff;
-}
-
-// titulo fin css
 ion-input{
     font-family: Georgia,'Times New Roman', Times, serif;
     font-weight: bolder;
@@ -45,4 +30,5 @@ ion-item{
     color: #fff;
     font-family: Georgia,'Times New Roman', Times, serif;
     font-weight: bolder;
+    --background: #ad0505;
 }
